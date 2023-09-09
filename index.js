@@ -43,8 +43,8 @@ app.get('/api', (req, res) => {
              "current_day": today,
              "utc_time": currentTime,
              "track": track,
-             "github_file_url": "https://github.com/Technicalqit/HNG-Stage-One",
-             "github_repo_url": "https://github.com/Technicalqit",
+             "github_file_url": "https://github.com/Technicalqit/HNG-Stage-One/blob/main/index.js",
+             "github_repo_url": "https://github.com/Technicalqit/HNG-Stage-One",
              "status_code": status_code
     }
     //tested the endpoint and coverted the information to JSON format 

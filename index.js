@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000
 //function to get current day of the week
 function current_day (){
     const day = new Date().getDay()
-    const days_of_the_week = ["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    const days_of_the_week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
     const today = days_of_the_week[day]
     return today
 }

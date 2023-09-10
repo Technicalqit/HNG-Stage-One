@@ -18,7 +18,7 @@ function current_day (){
 
 //Function which returns the full date and time in this format -> "utc_time": "2023-08-21T15:04:05Z
 function utcTime() {
-    const time = new Date().toISOString()
+    const time = new Date().toISOString().slice(0, 19) + 'Z'
     return time
 }
 

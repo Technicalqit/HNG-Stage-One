@@ -14,16 +14,13 @@ function current_day (){
     const today = days_of_the_week[day]
     return today
 }
-const today = current_day()
+
 
 //Function which returns the full date and time in this format -> "utc_time": "2023-08-21T15:04:05Z
 function utcTime() {
     const time = new Date().toISOString()
     return time
 }
-const currentTime = utcTime()
-
-
 
 
 
@@ -34,10 +31,20 @@ app.get('/api', (req, res) => {
     //Get parameters
     const slack_name = req.query.slack_name
     const track = req.query.track
+    
+    //checking if the parameters are provided
+    if (!slack_name || !track) {
+        return res.status(400).json({ error: "Both slack_name and track parameters are required." });
+    }
 
+    //Status code based on response
     const status_code = res.statusCode
 
-    
+    // Getting current day and time dynamically
+    const today = current_day()
+    const currentTime = utcTime()
+
+    //Required endpoint information 
     const information = {
              "slack_name": slack_name,
              "current_day": today,
